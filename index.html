@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="shiloz">
+<title>Document</title>
+	<!-- sweetalert2 CDN -->
+				<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<style>
+
+body {
+      background-repeat: no-repeat;
+      background-size: auto 120vh;
+      background-position-x: center;
+      text-align: center;
+    }
+				</style>
+  
+</head>
+<body style="background-image: url('https://i.picsum.photos/id/127/1920/1080.jpg?hmac=tUwxvd6-glVoeBPFwke9_OgXuiRXo6nkorjL4pcBU94')">
+  <input type="button" value="繼續挑戰" id="btn" style="margin:45vh auto;width:20vw">
+  <script>
+			var name;
+var mybtn = document.getElementById("btn");
+mybtn.addEventListener("click", start);
+
+function start() {
+  let mission;
+  Swal.fire({
+    title: `你即將前往美洲森林某個原始部族中探險`,
+    text: "你的穿著會是？",
+    confirmButtonText: '和平常差不多',
+    cancelButtonText: '接近當地人的服裝',
+    showCancelButton: true,
+    allowOutsideClick: false,
+    imageUrl: 'https://i.picsum.photos/id/469/3008/2000.jpg?hmac=vVTZk-Z-hUCiDlU8Y0lDTN0ek87O51fBbB4uqwFJNCc',
+    imageHeight: 300,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33'
+  })
+		.then((result) => {
+    if (result.dismiss === 'cancel') {
+            Swal.fire({
+              //B
+              title: "GAME OVER",
+              text: `從來沒有人活著回來描述過當地的服裝`,
+              confirmButtonText: "重新來過",
+              allowOutsideClick: false,
+              imageUrl: "https://i.picsum.photos/id/539/4237/2814.jpg?hmac=SbSc-eXlV4dccmtPIzLZV6qJCCOsiUkAfUCXV8v9SFA",
+              imageHeight: 300
+            });
+          }
+    else {
+					Swal.fire({
+        title: `過關`,
+								text: "繼續收拾行囊，準備出發探險",
+        allowOutsideClick: false,
+        imageUrl: 'https://i.picsum.photos/id/442/1909/1262.jpg?hmac=x2Y_bIJcLoz2hP7l1F8uZcrAC0eMggHKccKwVgXW7mM',
+        imageHeight: 300
+      }).then(function () {
+        Swal.fire({//lv1
+          title: "之後你遇到了部落中的首領",
+          text: "你會？",
+          confirmButtonText: '表現出害怕的樣子',
+          cancelButtonText: '熱情主動和首領交流',
+          showCancelButton: true,
+          allowOutsideClick: false,
+          imageUrl: 'https://i.picsum.photos/id/1062/5092/3395.jpg?hmac=o9m7qeU51uOLfXvepXcTrk2ZPiSBJEkiiOp-Qvxja-k',
+          imageHeight: 300,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33'
+        }).then((result) => {
+          if (result.dismiss === 'cancel') {
+            Swal.fire({
+              //B
+              title: "GAME OVER",
+              text: `首領覺得你沒大沒小的`,
+              confirmButtonText: "重新來過",
+              allowOutsideClick: false,
+              imageUrl: "http://tp1.tupiankucdn.com/ws/large/005GOaLIly1fxuzg2ief2g308c08cmzj.gif",
+              imageHeight: 300
+            });
+          }
+          else {
+            Swal.fire({ //G
+              title: "過關",
+              text: "首領很滿意，第一次感覺到自己似乎有些威嚴",
+              allowOutsideClick: false,
+              imageUrl: 'https://i.picsum.photos/id/1025/4951/3301.jpg?hmac=_aGh5AtoOChip_iaMo8ZvvytfEojcgqbCH7dzaz-H8Y',
+              imageHeight: 300
+            }).then(function () {
+              Swal.fire({//lv2
+                title: "部落首領希望你多待上幾天",
+                text: "你會？",
+                confirmButtonText: '盡快離開',
+                cancelButtonText: '乘此機會看看部落裡面沒有好看的異性',
+                showCancelButton: true,
+                allowOutsideClick: false,
+                imageUrl: 'https://i.picsum.photos/id/146/5184/3456.jpg?hmac=G_lxX9tIxlu06vWGZhaLVSwVD0Id60UslhgveMXNEpo',
+                imageHeight: 300,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33'
+              }).then((result) => {
+                if (result.dismiss !== 'cancel') {
+                  Swal.fire({
+                    //B
+                    title: "GAME OVER",
+                    text: "因為外面文明的世界，已經被喪屍病毒所感染",
+                    confirmButtonText: "重新來過",
+                    allowOutsideClick: false,
+                    imageUrl: "https://i.picsum.photos/id/548/5760/3840.jpg?hmac=Two7-E_r-RqqxrI9gLEcF7Oe-cSQQrn6lkNRWmSRV5s",
+                    imageHeight: 300
+                  });
+                }
+                else {
+                  Swal.fire({ //G
+                    title: "過關",
+                    text: "首領覺得你的審美觀很不錯",
+                    allowOutsideClick: false,
+                    imageUrl: 'https://i.picsum.photos/id/660/2508/1672.jpg?hmac=D_MkrRyzUZRYLOGoa4HJ1WJTfnzN0qshbCEPpaCoSuI',
+                    imageHeight: 300
+                  }).then(function () {
+                    Swal.fire({//lv3
+                      title: "首領很欣賞你",
+                      text: "你會希望得到首領更多的重視嗎？",
+                      confirmButtonText: '會',
+                      cancelButtonText: '不會',
+                      showCancelButton: true,
+                      allowOutsideClick: false,
+                      imageUrl: 'http://2.bp.blogspot.com/-qK7VkzhkUa8/VDJrwGG-iAI/AAAAAAAAKFc/t1FiVBXz5jM/s1600/we-need-you.jpg',
+                      imageHeight: 300,
+                      confirmButtonColor: '#3085d6',
+                      cancelButtonColor: '#d33'
+                    }).then((result) => {
+                      if (result.dismiss !== 'cancel') {
+                        Swal.fire({
+                          //B
+                          title: "GAME OVER",
+                          text: "首領太重視你，以至於被其他人排擠",
+                          confirmButtonText: "重新來過",
+                          allowOutsideClick: false,
+                          imageUrl: "https://memeprod.sgp1.digitaloceanspaces.com/user-wtf/1583572816654.jpg",
+                          imageHeight: 300
+                        });
+                      }
+                      else {
+                        Swal.fire({ //G
+                          title: "過關",
+                          text: "原來真正的首領去度假了，這是代理的鐘點工",
+                          allowOutsideClick: false,
+                          imageUrl: 'https://inews.gtimg.com/newsapp_bt/0/12964122168/1000',
+                          imageHeight: 300
+                        }).then(function () {
+                          Swal.fire({//lv4
+                            title: "你幫了族人一個大忙",
+                            text: "你的表現是?",
+                            confirmButtonText: '保持冷靜，避免招搖',
+                            cancelButtonText: '感到很得意',
+                            showCancelButton: true,
+                            allowOutsideClick: false,
+                            imageUrl: 'https://lh3.googleusercontent.com/proxy/i3eqczVowndqxZfEpWqXgKnqX5vUYnKn26CCkAXfJXCBtaoOVMKQL0Wc43a1k2YhfQacNmZer8NXEfL0IvzVHErdMzumiZo3wPM7fy0XCu7YlSEe',
+                            imageHeight: 300,
+                            confirmButtonColor: '#3085d6',
+                            cancelButtonColor: '#d33'
+                          }).then((result) => {
+                            if (result.dismiss !== 'cancel') {
+                              Swal.fire({
+                                //B
+                                title: "GAME OVER",
+                                text: "功勞被其他人給頂替了",
+                                confirmButtonText: "重新來過",
+                                allowOutsideClick: false,
+                                imageUrl:
+                                  "https://thumbor.blink.com.tw/2IoTt2PftLJ4GBS8V2KXlZZL3vs=/https://blinkimage.s3.amazonaws.com/images/discount_images/2/25/257304_23m7eo8kkysbkddt8b2uf1gz4.png",
+                                imageHeight: 300
+                              });
+                            }
+                            else {
+                              Swal.fire({ //G
+                                title: "過關",
+                                text: "首領看到了你的謎之自信",
+                                allowOutsideClick: false,
+                                imageUrl: 'https://p7.pstatp.com/origin/pgc-image/5bd9241e04f0472ea75c9d20f7617cc1.jpeg',
+                                imageHeight: 300
+                              }).then(function () {
+                                Swal.fire({//lv5
+                                  title: "你和小夥伴在森林中面臨了危機",
+                                  text: "有犧牲一個人才能活下去，你的選擇是？",
+                                  confirmButtonText: '不犧牲',
+                                  cancelButtonText: '犧牲同伴',
+                                  showCancelButton: true,
+                                  allowOutsideClick: false,
+                                  imageUrl: 'https://i.picsum.photos/id/1074/5472/3648.jpg?hmac=w-Fbv9bl0KpEUgZugbsiGk3Y2-LGAuiLZOYsRk0zo4A',
+                                  imageHeight: 300,
+                                  confirmButtonColor: '#3085d6',
+                                  cancelButtonColor: '#d33'
+                                }).then((result) => {
+                                  if (result.dismiss === 'cancel') {
+                                    Swal.fire(
+                                      {
+                                        //B
+                                        title:"GAME OVER",
+                                        text:"首領暴怒，因為被犧牲的小夥伴是首領的親戚",
+                                        confirmButtonText:"重新來過",
+                                        allowOutsideClick: false,
+                                        imageUrl:"https://lh3.googleusercontent.com/proxy/KXekvc1eDxSZxcCzD98e_0ubNg7zqTav-iat4zxV2TWMwO1zMxbG5jfdk7hFXdOIJGQ6OcCl_rU2IXdkR2WAehf4uGPCftgnwN5O5EWEtO8nnX_2xE0",
+                                        imageHeight: 300
+                                      }
+                                    );
+                                  }
+                                  else {
+                                    Swal.fire({ //G
+                                      title: "過關",
+                                      text: "你帥氣的想出全身而退的妙招",
+                                      allowOutsideClick: false,
+                                      imageUrl: 'https://i1.fqsjw.com/ab6615/f0384240/f36e4104bbb91beedf3f58.jpg',
+                                      imageHeight: 300
+                                    }).then(function () {
+                                      finish(1);
+                                    });
+                                  }
+                                });
+                              });
+                            }
+                          });
+                        });
+                      }
+                    });
+                  });
+                }
+              });
+            });
+          }
+        });
+      });
+    }
+  });
+}
+function finish(e) {
+  if (e) {
+    document.body.style.backgroundImage = "url('https://i.picsum.photos/id/669/1920/1080.jpg?hmac=1hHoNK-lZHZsDo47TYY5jrCuPp7JUjcED_CELf-_Jp8')";
+    mybtn.removeEventListener("click", start);
+    mybtn.addEventListener("click", function(){
+      location.reload();
+    });
+    mybtn.value = "恭喜過關";
+  }
+}
+start() ;
+		</script>
+
+</body>
+</html>
